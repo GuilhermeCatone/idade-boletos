@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>boletos</title>
+</head>
+<style>
+    body {
+        font-size: 15px;
+        text-align: center;
+        margin-right: 300px;
+        font-family: Arial, sans-serif;
+        opacity: 1;
+    }
+    body::before {
+        content: "";
+        background-image: url(imgboleto.jpg);
+        background-size: cover;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        opacity: 0.75;
+        z-index: -1;
+    }
+</style>
+<body>
+    Qual sua idade: <input type="text" id="txtidade">
+    <input type="button" value="verificar" onclick="calcular()">
+    <div id = res>
+
+    </div>
+
+    <script>
+        function calcular(){
+            var idade= document.getElementById('txtidade') 
+            var res = document.getElementById('res')
+            var vel = Number(idade.value)
+
+            if(vel >= 18){
+                res.innerHTML = `<p>você já é de maior, pode pagar <strong style="color: red;">BOLETO </strong></p>`
+
+            }else{
+                res.innerHTML = `<p>Você ainda é menor de idade, seu nome está <strong style= "color:green;">LIMPO</strong></p>`
+            }
+        }
+    </script>
+</body>
+</html>
